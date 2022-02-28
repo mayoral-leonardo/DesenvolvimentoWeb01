@@ -20,7 +20,7 @@ module.exports = {
     'indent': ['error', 2],
     // we want to avoid extraneous spaces
     'no-multi-spaces': ['error'],
-    'no-unused-vars' : 2,
+    'no-unused-vars' : 3,
     'no-undef' : 2
   }
 };
