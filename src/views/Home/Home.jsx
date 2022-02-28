@@ -39,6 +39,8 @@ export default function Home() {
     e.preventDefault();
 
     try {
+      if (!nome || nome === '') throw new Error('Digite seu nome!');
+      if (!telefone || telefone === '') throw new Error('Digite seu telefone!');
       if (!opcao || opcao === '') throw new Error('Selecione uma opção!');
       setPedido({
         nome: nome,
