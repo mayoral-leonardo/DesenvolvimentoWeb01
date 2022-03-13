@@ -6,6 +6,7 @@ import Clock from '../../components/Clock/Clock';
 
 export default function Home() {
   const [showPostModal, setShowPostModal] = useState(false);
+  const [modalConfig, setModalConfig] = useState(false);
   const [detail, setDetail] = useState();
 
   const [nome, setNome] = useState();
@@ -51,6 +52,7 @@ export default function Home() {
         total: total
       });
       toast.success('Pedido registrado com sucesso!');
+      setModalConfig(true);
     } catch (err) {
       toast.error(err.message);
     }
@@ -67,6 +69,7 @@ export default function Home() {
     setOpcao('');
     setInfo('');
     setTotal(0);
+    setModalConfig(false);
 
     setPedido({
       nome: '',
@@ -149,9 +152,9 @@ export default function Home() {
           </div>
         </form>
         <div className='responsive-buttons'>
-          <div className='main-content-container-buttons'>
+          {modalConfig && <div className='main-content-container-buttons'>
             <button className='buttons' onClick={() => togglePostModal(pedido)}>Recibo</button>
-          </div>
+          </div>}
           <div className='main-content-container-buttons'>
             <button className='buttons' onClick={() => resetFields()}>Novo pedido</button>
           </div>
