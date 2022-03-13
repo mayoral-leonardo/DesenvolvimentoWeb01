@@ -125,6 +125,7 @@ form textarea {
     margin-left: 0;
   }
   .main-content-container {
+    height: 1000px;
     padding-top: 200px;
     justify-content: center;
     align-items: center;
