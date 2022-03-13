@@ -88,7 +88,7 @@ export default function Home() {
       <div className='main-content-container'>
         <div className='main-content-container-header'>
           <h1>Restaurante Shapiusky</h1>
-          <Clock/>
+          <Clock />
         </div>
 
         <form onSubmit={handleSubmit}>
@@ -96,21 +96,21 @@ export default function Home() {
           <div className='main-content-container-grid'>
             <div className='main-content-container-grid-item'>
               <div className='input-container'>
-                <label>Nome: </label>
+                <label className='input-container-label'>Nome: </label>
                 <input type="text" name='Nome' value={nome} onChange={(value) => setNome(value.target.value)} />
               </div>
             </div>
 
             <div className='main-content-container-grid-item'>
               <div className='input-container'>
-                <label>Telefone: </label>
+                <label className='input-container-label'>Telefone: </label>
                 <input type="text" name='Telefone' placeholder='(xx) 00000-0000' value={telefone} onChange={(value) => setTelefone(value.target.value)} />
               </div>
             </div>
 
             <div className='main-content-container-grid-item'>
               <div className='input-container'>
-                <label>Opções </label>
+                <label className='input-container-label'>Opções: </label>
                 <select value={opcao} onChange={(value) => setOpcao(value.target.value)}>
                   <option value=''></option>
                   <option value='Prato do dia + Suco - R$ 20,00'>Prato do dia + Suco - R$ 20,00</option>
@@ -122,7 +122,7 @@ export default function Home() {
 
             <div className='main-content-container-grid-item'>
               <div className='input-container'>
-                <label>Delivery? </label>
+                <label className='input-container-label'>Delivery? </label>
                 <select value={delivery} onChange={(value) => setDelivery(value.target.value)}>
                   <option value='Retirada'>Retirada no balcão</option>
                   <option value='Entrega'>Sim (Taxa de R$ 5,00)</option>
@@ -148,9 +148,13 @@ export default function Home() {
             <button className='submit-button' type='submit'>Confirmar Pedido</button>
           </div>
         </form>
-        <div className='main-content-container-buttons'>
-          <button className='buttons' onClick={() => togglePostModal(pedido)}>Recibo</button>
-          <button className='buttons' onClick={() => resetFields()}>Novo pedido</button>
+        <div className='responsive-buttons'>
+          <div className='main-content-container-buttons'>
+            <button className='buttons' onClick={() => togglePostModal(pedido)}>Recibo</button>
+          </div>
+          <div className='main-content-container-buttons'>
+            <button className='buttons' onClick={() => resetFields()}>Novo pedido</button>
+          </div>
         </div>
       </div>
       {showPostModal && (

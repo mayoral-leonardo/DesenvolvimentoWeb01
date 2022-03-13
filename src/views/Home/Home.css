@@ -9,7 +9,7 @@
 .main-content-container {
   background: #EAEAEC;
   width: 1000px;
-  height: 650px;
+  height: 680px;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -74,6 +74,14 @@
   font-size: 1.2rem;
 }
 
+.input-container-label {
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
 input, select {
   width: 300px;
   border-radius: 5px;
@@ -104,4 +112,36 @@ span {
 form textarea {
   height: 105px;
   resize: none;
+}
+
+@media screen and (max-width: 768px) {
+  .main-content-container-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .main-content-container-grid-item {
+    margin-left: 0;
+  }
+  .main-content-container {
+    padding-top: 200px;
+    justify-content: center;
+    align-items: center;
+  }
+  .input-container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .main-content-container-additional-infos {
+    width: 100%;
+    justify-content: center;
+  }
+  .responsive-buttons {
+    width: 425px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+  }
 }
