@@ -145,3 +145,12 @@ form textarea {
     align-items: center;
   }
 }
+
+@media screen and (max-width: 400px) {
+  input, select {
+    width: 200px;
+  }
+  .responsive-buttons {
+    width: 330px;
+  }
+}
