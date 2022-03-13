@@ -8,6 +8,7 @@ export default function Home() {
   const [showPostModal, setShowPostModal] = useState(false);
   const [modalConfig, setModalConfig] = useState(false);
   const [detail, setDetail] = useState();
+  const [order, setOrder] = useState(false);
 
   const [nome, setNome] = useState();
   const [telefone, setTelefone] = useState();
@@ -53,6 +54,7 @@ export default function Home() {
       });
       toast.success('Pedido registrado com sucesso!');
       setModalConfig(true);
+      setOrder(true);
     } catch (err) {
       toast.error(err.message);
     }
@@ -70,6 +72,7 @@ export default function Home() {
     setInfo('');
     setTotal(0);
     setModalConfig(false);
+    setOrder(false);
 
     setPedido({
       nome: '',
@@ -147,9 +150,9 @@ export default function Home() {
             <span>{total && total !== 0 ? `R$ ${total},00` : 'R$ 00,00'}</span>
           </div>
 
-          <div className='main-content-container-buttons'>
+          {!order && <div className='main-content-container-buttons'>
             <button className='submit-button' type='submit'>Confirmar Pedido</button>
-          </div>
+          </div>}
         </form>
         <div className='responsive-buttons'>
           {modalConfig && <div className='main-content-container-buttons'>
